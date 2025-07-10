@@ -1,0 +1,84 @@
+{
+  "info": {
+    "_postman_id": "89b4ff6f-f2d3-4b5d-93e6-091fbe0dbb80",
+    "name": "Cisco_CSR1000v_RESTCONF",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": "Colección para gestionar interfaces por RESTCONF en el CSR1000v."
+  },
+  "item": [
+    {
+      "name": "DELETE Loopback11",
+      "request": {
+        "method": "DELETE",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/yang-data+json"
+          }
+        ],
+        "url": {
+          "raw": "https://192.168.56.101/restconf/data/ietf-interfaces:interfaces/interface=Loopback11",
+          "protocol": "https",
+          "host": ["192.168.56.101"],
+          "path": ["restconf", "data", "ietf-interfaces:interfaces", "interface=Loopback11"]
+        },
+        "auth": {
+          "type": "basic",
+          "basic": [
+            { "key": "username", "value": "cisco" },
+            { "key": "password", "value": "cisco123!" }
+          ]
+        }
+      }
+    },
+    {
+      "name": "PUT Loopback22",
+      "request": {
+        "method": "PUT",
+        "header": [
+          { "key": "Content-Type", "value": "application/yang-data+json" },
+          { "key": "Accept", "value": "application/yang-data+json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"ietf-interfaces:interface\": {\n    \"name\": \"Loopback22\",\n    \"type\": \"iana-if-type:softwareLoopback\",\n    \"enabled\": false,\n    \"ietf-ip:ipv4\": {\n      \"address\": [\n        {\n          \"ip\": \"22.22.22.22\",\n          \"netmask\": \"255.255.255.255\"\n        }\n      ]\n    }\n  }\n}"
+        },
+        "url": {
+          "raw": "https://192.168.56.101/restconf/data/ietf-interfaces:interfaces/interface=Loopback22",
+          "protocol": "https",
+          "host": ["192.168.56.101"],
+          "path": ["restconf", "data", "ietf-interfaces:interfaces", "interface=Loopback22"]
+        },
+        "auth": {
+          "type": "basic",
+          "basic": [
+            { "key": "username", "value": "cisco" },
+            { "key": "password", "value": "cisco123!" }
+          ]
+        }
+      }
+    },
+    {
+      "name": "GET Interfaces",
+      "request": {
+        "method": "GET",
+        "header": [
+          { "key": "Accept", "value": "application/yang-data+json" }
+        ],
+        "url": {
+          "raw": "https://192.168.56.101/restconf/data/ietf-interfaces:interfaces",
+          "protocol": "https",
+          "host": ["192.168.56.101"],
+          "path": ["restconf", "data", "ietf-interfaces:interfaces"]
+        },
+        "auth": {
+          "type": "basic",
+          "basic": [
+            { "key": "username", "value": "cisco" },
+            { "key": "password", "value": "cisco123!" }
+          ]
+        }
+      }
+    }
+  ]
+}
